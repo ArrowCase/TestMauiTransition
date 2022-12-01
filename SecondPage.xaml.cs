@@ -7,9 +7,9 @@ namespace TestMauiTransition
             InitializeComponent();
         }
 
-        private void OnButtonClicked(object sender, EventArgs e)
+        private async void OnButtonClicked(object sender, EventArgs e)
         {
-            App.Current?.MainPage?.Navigation?.PopAsync(animated: false);
+            await App.Current?.MainPage?.Navigation?.PopAsync(animated: false);
         }
     }
 }
