@@ -35,6 +35,11 @@
                 Clicked="OnButtonClicked"
                 HorizontalOptions="Center" />
 
+            <Button
+                Text="Go to CollectionView Test Page"
+                Clicked="OnListButtonClicked"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 

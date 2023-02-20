@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:t="clr-namespace:TestMauiTransition"
+             BackgroundColor="Blue"
+             x:DataType="t:MainVM"
+             x:Class="TestMauiTransition.ListPage">
+
+    <ContentPage.Content>
+        <HorizontalStackLayout>
+            <Grid>
+                <Frame>
+                    <CollectionView ItemsSource="{Binding LeftList}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="t:ListItem">
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Side}" />
+                                    <Label Text=" Count=" />
+                                    <Label Text="{Binding Count}" />
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End">
+                    <Button Text="Add Left" Command="{Binding AddLeftItemCommand}" />
+                    <Button Text="Update Left" Command="{Binding UpdateLeftTextCommand}" />
+                </HorizontalStackLayout>
+            </Grid>
+            <Grid>
+                <Frame>
+                    <CollectionView ItemsSource="{Binding RightList}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="t:ListItem">
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Side}" />
+                                    <Label Text=" Count=" />
+                                    <Label Text="{Binding Count}" />
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End">
+                    <Button Text="Add Right" Command="{Binding AddRightItemCommand}" />
+                    <Button Text="Update Right" Command="{Binding UpdateRightTextCommand}" />
+                </HorizontalStackLayout>
+            </Grid>
+        </HorizontalStackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

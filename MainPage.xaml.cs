@@ -11,5 +11,12 @@
         {
             await App.Current?.MainPage?.Navigation?.PushAsync(new SecondPage(), animated: false);
         }
+
+        private async void OnListButtonClicked(object sender, EventArgs e)
+        {
+            var page = new ListPage();
+            page.BindingContext = new MainVM();
+            await App.Current?.MainPage?.Navigation?.PushAsync(page, animated: false);
+        }
     }
 }
